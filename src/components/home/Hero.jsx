@@ -55,7 +55,7 @@ export default function Hero() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 items-start">
             <Link
-              href="/contact"
+              href="/contact-us"
               className="bg-white text-teal-600 px-6 py-3 rounded-full text-xl  hover:bg-gray-100 transition shadow-2xl"
             >
               Contact Us

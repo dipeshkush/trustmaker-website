@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/components/layout/Header'; 
 import Footer from '@/components/layout/Footer';
+import CTA from '@/components/home/CTA';
 
 export const metadata = {
   title: 'Trustmaker - Premium Property Information',
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <main className="flex-grow">
           {children}
         </main>
+        <CTA />
         <Footer />
       </body>
     </html>

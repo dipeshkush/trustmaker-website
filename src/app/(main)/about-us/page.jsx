@@ -1,4 +1,3 @@
-import CTA from '@/components/home/CTA';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -157,8 +156,6 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-
-     <CTA />
       
     </>
   );

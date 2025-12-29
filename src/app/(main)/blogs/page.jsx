@@ -115,7 +115,6 @@ export default function Blogs() {
         </div>
       </section>
 
-      <CTA />
     </>
   );
 }

@@ -24,7 +24,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-gray-300 hover:text-white transition">About Us</Link></li>
               <li><Link href="/blogs" className="text-gray-300 hover:text-white transition">Blogs</Link></li>
               <li><Link href="/testimonials" className="text-gray-300 hover:text-white transition">Testimonials</Link></li>
-              <li><Link href="/team" className="text-gray-300 hover:text-white transition">Team</Link></li>
+              {/* <li><Link href="/team" className="text-gray-300 hover:text-white transition">Team</Link></li> */}
             </ul>
           </div>
 
@@ -32,9 +32,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6 text-gray-200">Company</h3>
             <ul className="space-y-4">
-              <li><Link href="/mission-vision" className="text-gray-300 hover:text-white transition">Mission & Vision</Link></li>
-              <li><Link href="/terms" className="text-gray-300 hover:text-white transition">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="text-gray-300 hover:text-white transition">Privacy Policy</Link></li>
+              {/* <li><Link href="/vision-mission" className="text-gray-300 hover:text-white transition">Mission & Vision</Link></li> */}
+              <li><Link href="/terms-and-conditions" className="text-gray-300 hover:text-white transition">Terms & Conditions</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-300 hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link href="/cookie-policy" className="text-gray-300 hover:text-white transition">Cookie Policy</Link></li>
               <li><Link href="/contact-us" className="text-gray-300 hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>

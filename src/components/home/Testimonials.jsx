@@ -1,4 +1,4 @@
-'use client'; // जरूरी है animation के लिए
+'use client'; 
 
 export default function Testimonials() {
   const testimonials = [
@@ -72,7 +72,7 @@ export default function Testimonials() {
       <div className="w-full mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl  font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

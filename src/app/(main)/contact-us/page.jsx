@@ -9,7 +9,7 @@ export default function ContactUsPage() {
       <section className="relative py-20 bg-gradient-to-br from-teal-600 to-cyan-700 overflow-hidden">
         <div className="absolute inset-0 bg-grid-gray-100/50"></div>
         <div className="relative w-full mx-auto px-6 lg:px-8 text-center mt-10">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl font-bold text-white mb-6">
             Get in Touch with <span className="text-[#D97A9F]">Trustmaker</span>
           </h1>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto">
