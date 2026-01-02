@@ -57,15 +57,30 @@ export default function Blogs() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-teal-600 to-cyan-700 text-white">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 w-full mx-auto px-6 text-center">
-          <h1 className="text-4xl font-bold mb-8">
-            Trustmaker <span className='text-[#D97A9F]'>Blogs</span>
+      <section className="relative h-96 md:h-[60vh] overflow-hidden mb-12">
+        {/* Background Image */}
+        <Image
+          src="/blogsimg.webp"   
+          alt="Trustmaker Blogs"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/65" />
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 text-center">
+          <h1 className="text-4xl font-bold text-white mb-6">
+            <span className="text-[#D97A9F]">Trustmaker</span> Blogs
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-100">
-            Latest insights, guides, and market updates from Indore's trusted real estate experts
-          </p>
+         <p className="text-lg md:text-xl max-w-3xl text-gray-200 leading-relaxed">
+          Expert insights, market trends, and practical guidance from Indore’s trusted real estate professionals—helping you make smarter property decisions.
+        </p>
+
+
+
         </div>
       </section>
 

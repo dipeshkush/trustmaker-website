@@ -1,28 +1,34 @@
 import './globals.css';
-import Header from '@/components/layout/Header'; 
+import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CTA from '@/components/home/CTA';
+import { Lato } from 'next/font/google';
+
+// Lato Font - All weights
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700', '900'],
+  variable: '--font-lato',
+  display: 'swap',
+});
 
 export const metadata = {
-  title: 'Trustmaker - Premium Property Information',
-  description: 'Your trusted source for residential and commercial properties',
+  title: {
+    template: '%s | Trustmaker Infrareal',
+    default: 'Trustmaker Infrareal - Premium Real Estate Services in Indore',
+  },
+  description: 'Your trusted partner for verified properties in Indore with zero brokerage for buyers.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className={`${lato.variable} font-lato antialiased bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         <Header />
-
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <CTA />
         <Footer />
       </body>
