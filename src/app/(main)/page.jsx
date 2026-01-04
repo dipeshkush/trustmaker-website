@@ -4,6 +4,8 @@ import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Projects from '@/components/home/Projects';
 import Testimonials from '@/components/home/Testimonials';
 import Contact from '@/components/home/Contact';
+import FAQ from '@/components/home/FAQ';
+import PropertyTypes from '@/components/home/PropertyTypes';
 
 
 export default function Home() {
@@ -11,8 +13,10 @@ export default function Home() {
     <>
       <Hero />
       <WhyChooseUs />
+      <PropertyTypes />
       <Projects />
       <Testimonials />
+      <FAQ />
       <Contact />
 
     </>

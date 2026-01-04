@@ -20,7 +20,7 @@ export default function CTA() {
       <div className="absolute inset-0 bg-[#9C2F5A]/40" />
 
       {/* Content */}
-      <div className="relative z-10 w-full mx-auto px-6">
+      <div className="relative z-10 w-full mx-auto px-8">
         
         {/* Top Row */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">

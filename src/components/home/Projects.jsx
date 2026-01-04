@@ -6,11 +6,11 @@ import { PROJECTS } from '@/app/data/projects';
 
 export default function ProjectsSection() {
   const featuredProjects = PROJECTS.slice(0, 3);
-  const carouselProjects = [...featuredProjects, ...featuredProjects, ...featuredProjects];
 
   return (
-    <section className="py-12 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
-      <div className="w-full mx-auto px-6">
+    <section className="py-12 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      <div className="w-full mx-auto px-8">
+
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-8">
           <div>
@@ -34,38 +34,14 @@ export default function ProjectsSection() {
           </Link>
         </div>
 
-        {/* Carousel */}
-        <div className="relative overflow-hidden py-8">
-          <div className="flex gap-8 animate-step-scroll">
-            {carouselProjects.map((project, index) => (
-              <div
-                key={`${project.slug}-${index}`}
-                className="flex-shrink-0 w-[320px] md:w-[400px] lg:w-[420px]"
-              >
-                <ProjectCard project={project} />
-              </div>
-            ))}
-          </div>
+        {/* Static Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </div>
+
       </div>
-      <style jsx global>{`
-        @keyframes step-scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.33%);
-          }
-        }
-
-        .animate-step-scroll {
-          animation: step-scroll 20s linear infinite;
-        }
-
-        .animate-step-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }

@@ -33,7 +33,7 @@ export default function EMICalculator() {
       {/* Heading */}
       <div className="text-center mb-6">
         <h3 className="text-xl text-white tracking-wide">
-          EMI CALCULATOR
+          Calculate EMI for This Project
         </h3>
         <div className="w-24 h-1 bg-[#9C2F5A] mx-auto mt-3 rounded-full" />
       </div>
@@ -93,7 +93,7 @@ export default function EMICalculator() {
       </div>
 
       {/* Results */}
-      <div className="grid grid-cols-3 gap-6 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
         <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10">
           <p className="text-gray-400 text-sm mb-1">Monthly EMI</p>
           <p className="text-2xl font-black text-white">₹ {emi.toLocaleString('en-IN')}</p>
@@ -119,7 +119,11 @@ export default function EMICalculator() {
         >
           Reset
         </button>
+        
       </div>
+      <p className="mt-6 text-xs text-gray-400 text-center">
+        * EMI is indicative. Actual loan terms may vary based on bank policies.
+      </p>
     </div>
   );
 }

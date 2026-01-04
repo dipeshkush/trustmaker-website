@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --font-raleway: "Raleway", sans-serif;
+} */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
+
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+}
+
+.hover\:animation-paused:hover {
+  animation-play-state: paused;
+}
+
 
 @layer base {
   @font-face {
@@ -13,4 +30,8 @@
   body {
     font-family: 'Lato', sans-serif;
   }
+  
+}
+.animation-paused {
+  animation-play-state: paused;
 }

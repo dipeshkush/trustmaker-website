@@ -83,23 +83,19 @@ export default function WhyChooseUs() {
       ref={sectionRef}
       className="py-12 bg-gradient-to-b from-white to-teal-50/30 overflow-hidden"
     >
-      <div className="w-full mx-auto px-6 lg:px-8">
+      <div className="w-full mx-auto px-8">
 
         {/* Heading */}
-        <div
-          ref={headingRef}
-          className="text-center max-w-4xl mx-auto mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-tight text-center">
+        <div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
             Why Choose <span className="text-[#9C2F5A]">Trustmaker</span>
-
-            <span className="block mx-auto mt-3 w-24 h-1 bg-[#9C2F5A] rounded-full"></span>
+            <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We make buying a home in Indore simple, transparent, and stress-free.
+          <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
+           We make buying a home in Indore simple, transparent, and stress-free.
           </p>
         </div>
+
 
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">

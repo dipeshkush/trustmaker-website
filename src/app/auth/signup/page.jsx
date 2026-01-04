@@ -43,7 +43,7 @@ export default function Signup() {
       <div className="absolute inset-0 bg-black/80" />
 
       {/* Signup Card */}
-      <div className="relative z-10 w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-10">
+      <div className="relative z-10 w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-10 mt-12">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Join as Associate
         </h1>

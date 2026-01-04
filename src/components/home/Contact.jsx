@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 export default function ContactSection({ showForm = true }) {
   return (
     <section className="py-12 bg-white">
-      <div className="w-full mx-auto px-6 lg:px-8">
+      <div className="w-full mx-auto px-8">
 
         {/* ===== Section Heading ===== */}
         <div className="text-center mb-14">

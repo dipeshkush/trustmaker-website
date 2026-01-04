@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12">
-      <div className="w-full mx-auto px-6">
+      <div className="w-full mx-auto px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Left: About the Company */}
           <div className="space-y-6">
@@ -26,6 +26,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-gray-200">Quick Links</h3>
             <ul className="space-y-4">
+              {/* <li><Link href="/" className="text-gray-300 hover:text-white transition">Home</Link></li> */}
               <li><Link href="/projects" className="text-gray-300 hover:text-white transition">Projects</Link></li>
               <li><Link href="/about" className="text-gray-300 hover:text-white transition">About Us</Link></li>
               <li><Link href="/blogs" className="text-gray-300 hover:text-white transition">Blogs</Link></li>

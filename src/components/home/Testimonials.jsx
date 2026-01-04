@@ -39,7 +39,7 @@ export default function Testimonials() {
       text: "As a first-time buyer, I was confused. Trustmaker team patiently explained everything and helped me buy my home.",
     },
 
-    // duplicate for infinite scroll
+    // Duplicate for smooth infinite scroll (must be exact copy)
     {
       name: "Rakesh Sharma",
       location: "Vijay Nagar, Indore",
@@ -55,39 +55,33 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="mb-12 bg-gray-50 overflow-hidden">
-      <div className="w-full mx-auto px-6">
+    <section className="bg-gray-50 overflow-hidden py-12">
+      <div className="w-full mx-auto px-8">
 
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+         <div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
             What Our <span className="text-[#9C2F5A]">Clients Say</span>
+            <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
-
-          {/* Short underline */}
-          <span className="block mx-auto mt-4 w-20 h-1 rounded-full bg-[#9C2F5A]" />
-
-          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            Over <span className="font-semibold text-[#9C2F5A]">5,000+ families</span> in Indore
-            have trusted Trustmaker to find their dream property.
+          <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
+            Hear from clients who found their perfect property with Trustmaker.
           </p>
         </div>
 
-        {/* Auto Scroll */}
+        {/* Auto Scroll Marquee */}
         <div className="relative">
           <div className="overflow-hidden py-6">
-            <div className="flex gap-8 animate-marquee">
-
+           <div className="flex gap-8 w-max animate-marquee hover:animation-paused">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-96 h-[300px] bg-white rounded-xl p-8
-                             flex flex-col justify-between
-                             hover:shadow-2xl transition-shadow duration-300"
+                  className={`flex-shrink-0 w-96 h-[300px] bg-white rounded-xl p-8
+                              flex flex-col justify-between
+                              hover:shadow-2xl transition-shadow duration-300`}
                 >
-                  {/* Top Content */}
+                  {/* Stars */}
                   <div>
-                    {/* Stars */}
                     <div className="flex text-yellow-400 mb-5">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <svg key={i} className="w-6 h-6 fill-current" viewBox="0 0 20 20">
@@ -96,16 +90,16 @@ export default function Testimonials() {
                       ))}
                     </div>
 
-                    {/* Text */}
+                    {/* Quote */}
                     <p className="text-gray-700 text-base leading-relaxed italic">
                       “{testimonial.text}”
                     </p>
                   </div>
 
-                  {/* Bottom Profile */}
+                  {/* Profile */}
                   <div className="flex items-center gap-4 pt-4 border-t border-gray-100 mt-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full
-                                    flex items-center justify-center text-white font-bold text-lg">
+                    <div className={`w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full
+                                      flex items-center justify-center text-white font-bold text-lg`}>
                       {testimonial.name.charAt(0)}
                     </div>
                     <div>
@@ -119,26 +113,10 @@ export default function Testimonials() {
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
-
         </div>
       </div>
-
-      {/* Marquee animation */}
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 55s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
