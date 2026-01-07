@@ -41,7 +41,7 @@ export default function CTA() {
           {/* RIGHT: Button */}
           <div className="flex-shrink-0">
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-flex items-center justify-center bg-white text-[#9C2F5A] font-bold text-lg md:text-xl px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
             >
               Contact Us Today

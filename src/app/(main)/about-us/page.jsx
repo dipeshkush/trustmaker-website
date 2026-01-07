@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[60vh] overflow-hidden">
+      <div className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
           src="/about-hero.webp"
           alt="About Trustmaker Infrareal"
@@ -18,11 +18,12 @@ export default function AboutUs() {
 
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center">
               About <span className="text-[#D97A9F]">Trustmaker </span>Infrareal
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              At Trustmaker Infrareal, we don’t just deal in properties — we help people turn dreams into reality through honest guidance and seamless processes.
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              At Trustmaker Infrareal, we are more than just a real estate service — we are your trusted partner in one of life's biggest decisions. 
+              Founded with a simple yet powerful vision: to bring honesty, transparency, and genuine care back to property buying in Indore.
             </p>
           </div>
         </div>
@@ -34,9 +35,9 @@ export default function AboutUs() {
           {/* First Block: Text Left – Image Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Story & Commitment
-                
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 relative inline-block pb-5 text-center mx-auto">
+                Our Story & <span className="text-[#9C2F5A]">Commitment</span>
+                <span className="absolute left-1/2 bottom-0 w-32 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
               </h2>
 
               <div className="space-y-5 text-lg text-gray-700 leading-relaxed max-w-xl">
@@ -91,8 +92,9 @@ export default function AboutUs() {
             </div>
 
             <div className="space-y-8 order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Vision, Goal & Strength
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 relative inline-block pb-5 text-center mx-auto">
+                Vision, Goal & <span className="text-[#9C2F5A]">Strength</span>
+                <span className="absolute left-1/2 bottom-0 w-32 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -114,9 +116,12 @@ export default function AboutUs() {
       {/* Why Choose Us */}
       <section className="py-6  bg-white">
         <div className="w-full mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          <span className="relative inline-block pb-5">
             Why Choose <span className="text-[#9C2F5A]">Trustmaker</span> Infrareal?
-          </h2>
+            <span className="absolute left-1/2 bottom-0 w-36 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+          </span>
+        </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             {/* Card 1: Expert Guidance */}

@@ -87,9 +87,9 @@ export default function WhyChooseUs() {
 
         {/* Heading */}
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
-            Why Choose <span className="text-[#9C2F5A]">Trustmaker</span>
-            <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+         <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-4">
+            Why Choose <span className="text-[#9C2F5A]">Trustmaker?</span>
+            <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
            We make buying a home in Indore simple, transparent, and stress-free.

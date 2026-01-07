@@ -1,9 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-black text-white py-16">
       <div className="w-full mx-auto px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Left: About the Company */}
@@ -26,7 +29,6 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-gray-200">Quick Links</h3>
             <ul className="space-y-4">
-              {/* <li><Link href="/" className="text-gray-300 hover:text-white transition">Home</Link></li> */}
               <li><Link href="/projects" className="text-gray-300 hover:text-white transition">Projects</Link></li>
               <li><Link href="/about" className="text-gray-300 hover:text-white transition">About Us</Link></li>
               <li><Link href="/blogs" className="text-gray-300 hover:text-white transition">Blogs</Link></li>
@@ -44,13 +46,35 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info with Icons */}
           <div>
             <h3 className="text-xl font-semibold mb-6 text-gray-200">Get in Touch</h3>
-            <div className="space-y-3 text-gray-300">
-              <p>customercare@trustmaker.in</p>
-              <p>+91-9826042358</p>
-              <p>Office No. 492, Netaji Subhash Marg,<br />Bada Ganpati, Indore,<br />Madhya Pradesh, India, 452005</p>
+            <div className="space-y-5 text-gray-300">
+              {/* Email */}
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 text-teal-400 flex-shrink-0" />
+                <a href="mailto:customercare@trustmaker.in" className="hover:text-teal-400 transition">
+                  customercare@trustmaker.in
+                </a>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-4">
+                <Phone className="w-5 h-5 text-teal-400 flex-shrink-0" />
+                <a href="tel:+919826042358" className="hover:text-teal-400 transition">
+                  +91-9826042358
+                </a>
+              </div>
+
+              {/* Address */}
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-teal-400 flex-shrink-0 mt-1" />
+                <p className="leading-relaxed">
+                  Office No. 492, Netaji Subhash Marg,<br />
+                  Bada Ganpati, Indore,<br />
+                  Madhya Pradesh, India, 452005
+                </p>
+              </div>
             </div>
           </div>
         </div>

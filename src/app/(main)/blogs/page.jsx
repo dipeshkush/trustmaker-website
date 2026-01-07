@@ -1,63 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import CTA from '@/components/home/CTA';
+import { blogPosts } from '@/app/data/blogPosts';
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "Top 10 Localities to Invest in Indore in 2025",
-    excerpt: "Discover the most promising residential and commercial areas in Indore for high returns and growth potential.",
-    date: "December 15, 2025",
-    readTime: "5 min read",
-    image: "https://destinationcompress.s3.ap-south-1.amazonaws.com/a48d69f2-eedc-430e-ba1a-ece36d2eb633.jpg"  
-  },
-  {
-    id: 2,
-    title: "RERA Guidelines: What Every Property Buyer Should Know",
-    excerpt: "Complete guide to RERA rules in Madhya Pradesh – protect your investment and know your rights.",
-    date: "December 10, 2025",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"  
-  },
-  {
-    id: 3,
-    title: "How to Choose the Right Property in Indore: Complete Checklist",
-    excerpt: "Location, builder reputation, legal verification, amenities – everything you need to check before buying.",
-    date: "December 5, 2025",
-    readTime: "8 min read",
-    image: "https://imgcdn.houssed.com/assets/Files/Blog/2025/6/Indore-property-price-trends-2025-1749444016.webp"  
-  },
-  {
-    id: 4,
-    title: "Indore Real Estate Market Trends 2025",
-    excerpt: "Latest price trends, new launches, and investment opportunities in Indore's growing property market.",
-    date: "November 28, 2025",
-    readTime: "6 min read",
-    image: "https://dyimg1.realestateindia.com/prop_images/1707194/882143_3-350x350.jpg" 
-  },
-  {
-    id: 5,
-    title: "Home Loan Guide for First-Time Buyers in Indore",
-    excerpt: "Best banks, interest rates, eligibility, documents required, and tips to get quick approval.",
-    date: "November 20, 2025",
-    readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"  
-  },
-  {
-    id: 6,
-    title: "Commercial Property Investment in Indore: Opportunities & Risks",
-    excerpt: "Best locations for shops, offices, and showrooms. Rental yields and growth potential analysis.",
-    date: "November 15, 2025",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"  
-  }
-];
 
 export default function Blogs() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-96 md:h-[60vh] overflow-hidden mb-12">
+      <section className="relative h-screen md:h-[60vh] overflow-hidden mb-12">
         {/* Background Image */}
         <Image
           src="/blogsimg.webp"   
@@ -68,18 +19,16 @@ export default function Blogs() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/70" />
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 text-center">
-          <h1 className="text-4xl font-bold text-white mb-6">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center mx-auto">
             <span className="text-[#D97A9F]">Trustmaker</span> Blogs
           </h1>
-         <p className="text-lg md:text-xl max-w-3xl text-gray-200 leading-relaxed">
-          Expert insights, market trends, and practical guidance from Indore’s trusted real estate professionals—helping you make smarter property decisions.
+         <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          Expert insights, up-to-date market trends, and practical guidance from Indore’s trusted real estate professionals—empowering you to make smarter, well-informed property decisions with confidence.
         </p>
-
-
 
         </div>
       </section>

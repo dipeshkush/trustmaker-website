@@ -7,7 +7,7 @@ export default function TermsAndConditions() {
       <section className="relative py-24 bg-gradient-to-br from-teal-600 to-cyan-700 text-white">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 w-full mx-auto px-6 text-center">
-          <h1 className="text-4xl font-extrabold mb-8">
+          <h1 className="text-4xl font-extrabold py-4 mb-4">
             Terms & Conditions
           </h1>
           <p className="text-xl max-w-4xl mx-auto text-gray-100">

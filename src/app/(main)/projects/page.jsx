@@ -111,7 +111,7 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-96 md:h-[60vh] overflow-hidden">
+      <section className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
           src="/projects.webp"
           alt="Premium Projects in Indore - Trustmaker Infrareal"
@@ -125,12 +125,13 @@ export default function ProjectsPage() {
 
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl font-black text-white mb-6 leading-tight">
-              Our Premium Projects
+            <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
+             <span className="text-[#D97A9F]"> Trustmaker</span> Exclusive Collection
             </h1>
             <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-              Handpicked residential, commercial, and villa projects across
-              Indore — verified, transparent, and ready for you.
+             Handpicked residential apartments, luxury villas, prime commercial spaces, 
+            and investment-ready plots across Indore — all personally verified, 
+            fully transparent, and backed by zero brokerage for buyers.
             </p>
           </div>
         </div>

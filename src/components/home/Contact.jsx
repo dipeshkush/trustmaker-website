@@ -9,9 +9,9 @@ export default function ContactSection({ showForm = true }) {
 
         {/* ===== Section Heading ===== */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
             Get in <span className="text-[#9C2F5A]">Touch</span>
-            <span className="absolute left-1/2 -bottom-3 w-20 h-[3px] bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+            <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
             Reach out to us for property enquiries, site visits, or any assistance.

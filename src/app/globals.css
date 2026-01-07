@@ -20,6 +20,18 @@
   animation-play-state: paused;
 }
 
+.property-slide {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.property-slide.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 @layer base {
   @font-face {

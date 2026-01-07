@@ -14,10 +14,10 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-8">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
-              Featured <span className="text-[#9C2F5A]">Projects</span>
-              <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
-            </h2>
+           <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
+            Featured <span className="text-[#9C2F5A]">Projects</span>
+            <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+          </h2>
             <p className="text-gray-600 mt-4 max-w-xl text-lg">
               Discover handpicked verified residential & commercial projects in Indore
             </p>

@@ -20,11 +20,12 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Main Headline */}
-          <h1 className="text-5xl leading-tight tracking-tight">
-            Easy, Fast &
-            <span className="text-teal-300"> Reliable</span> Real Estate<br />
-            Services in Indore
-          </h1>
+          <h1 className="text-5xl font-bold leading-tight text-white relative inline-block pb-6">
+              Easy, Fast &
+              <span className="text-teal-300"> Reliable</span> Real Estate<br className="hidden md:block" />
+              Services in Indore
+              {/* <span className="absolute left-1/2 -bottom-1 w-32 h-1.5 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span> */}
+            </h1>
 
           {/* Subheadline */}
           <p className="text-lg font-medium text-gray-100 max-w-4xl mx-auto">

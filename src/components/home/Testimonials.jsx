@@ -60,9 +60,9 @@ export default function Testimonials() {
 
         {/* Heading */}
          <div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
             What Our <span className="text-[#9C2F5A]">Clients Say</span>
-            <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+            <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
             Hear from clients who found their perfect property with Trustmaker.

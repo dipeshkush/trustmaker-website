@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
+
 const propertyTypes = [
   {
     title: 'Residential Apartments',
@@ -41,8 +42,14 @@ export default function PropertyTypes() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const visibilityMap = useRef(new Map());
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+  setMounted(true);
+}, []);
 
 useEffect(() => {
+  if (!mounted) return;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -50,11 +57,10 @@ useEffect(() => {
         visibilityMap.current.set(index, entry.intersectionRatio);
 
         if (entry.intersectionRatio > 0) {
-          entry.target.classList.add('show');
+          entry.target.classList.add("show");
         }
       });
 
-      // Find most visible slide from ALL slides
       let maxRatio = 0;
       let active = activeIndex;
 
@@ -68,15 +74,16 @@ useEffect(() => {
       setActiveIndex(active);
     },
     {
-      threshold: Array.from({ length: 21 }, (_, i) => i / 20), 
-      rootMargin: '0px 0px -35% 0px',
+      threshold: Array.from({ length: 21 }, (_, i) => i / 20),
+      rootMargin: "0px 0px -35% 0px",
     }
   );
 
   slidesRef.current.forEach((el) => el && observer.observe(el));
 
   return () => observer.disconnect();
-}, []);
+}, [mounted]);
+
 
 
 
@@ -87,8 +94,8 @@ useEffect(() => {
           {/* LEFT PANEL */}
           <aside className="lg:sticky lg:top-28 self-start space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-               Elevating Your <br />
+              <h2 className="text-4xl font-bold leading-tight relative inline-block pb-5">
+                Elevating Your <br className="hidden md:block" />
                 <span className="text-[#9C2F5A]">Property Journey</span>
               </h2>
 
@@ -120,7 +127,7 @@ useEffect(() => {
                 key={index}
                 data-index={index}
                 ref={(el) => (slidesRef.current[index] = el)}
-                className="property-slide"
+                className={`property-slide ${mounted ? "" : "opacity-0"}`}
               >
                 <div className="relative h-[75vh]  overflow-hidden">
                   {/* Image */}
@@ -158,20 +165,6 @@ useEffect(() => {
           </div>
         </div>
       </div>
-
-      {/* Reveal Animation */}
-      <style jsx>{`
-        .property-slide {
-          opacity: 0;
-          transform: translateY(60px);
-          transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .property-slide.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
     </section>
   );
 }

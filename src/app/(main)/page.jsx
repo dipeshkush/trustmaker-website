@@ -6,6 +6,8 @@ import Testimonials from '@/components/home/Testimonials';
 import Contact from '@/components/home/Contact';
 import FAQ from '@/components/home/FAQ';
 import PropertyTypes from '@/components/home/PropertyTypes';
+import Legal from '@/components/home/Legal';
+import MissionVision from '@/components/home/MissionVision';
 
 
 export default function Home() {
@@ -15,7 +17,9 @@ export default function Home() {
       <WhyChooseUs />
       <PropertyTypes />
       <Projects />
+      <MissionVision />
       <Testimonials />
+      <Legal />
       <FAQ />
       <Contact />
 

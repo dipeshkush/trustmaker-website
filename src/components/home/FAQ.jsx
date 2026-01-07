@@ -44,9 +44,9 @@ export default function FAQPage() {
 
         {/* Heading */}
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
             Frequently Asked <span className="text-[#9C2F5A]">Questions</span>
-            <span className="absolute left-1/2 -bottom-3 w-20 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+            <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
             Find answers to common questions about our services and property listings.

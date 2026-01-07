@@ -7,7 +7,7 @@ export default function CookiePolicy() {
       <section className="relative py-24 bg-gradient-to-br from-teal-600  to-cyan-700 text-white">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-4xl font-extrabold leading-tight py-4 mb-4">
             Cookie Policy
           </h1>
           <p className="text-xl max-w-4xl mx-auto text-gray-100 leading-relaxed">
