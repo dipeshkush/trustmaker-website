@@ -7,10 +7,10 @@ export default function AboutUs() {
       {/* Hero Section */}
       <div className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
-          src="/about-hero.webp"
+          src="/about.webp"
           alt="About Trustmaker Infrareal"
           fill
-          className="object-top object-center"
+          className="object-cover object-center "
           priority
         />
 

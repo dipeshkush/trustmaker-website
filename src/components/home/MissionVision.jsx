@@ -21,12 +21,12 @@ export default function MissionVision() {
       <div className="w-full mx-auto px-6">
 
         {/* Heading */}
-        <div className="mb-16 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
-              Mission & <span className="text-[#9C2F5A]">Vision</span>
-              <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
-            </h2>
-          <p className="text-lg text-gray-600 max-w-3xl">
+         <div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
+            Mission & <span className="text-[#9C2F5A]">Vision</span>
+            <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
             Building more than homes — creating lasting value for families
             through trust, quality, and responsible development.
           </p>

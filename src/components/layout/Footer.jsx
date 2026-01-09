@@ -80,20 +80,24 @@ export default function Footer() {
         </div>
 
         {/* Copyright + Designed By */}
-        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>© 2025 Trustmaker Infrareal Pvt. Ltd. All rights reserved.</p>
-          
-          <p className="mt-4 md:mt-0">
-            Designed by {'  '}
-            <a 
-              href="https://webseeder.in" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-teal-400 hover:text-teal-300 font-medium transition"
-            >
-              Webseeder Technologies
-            </a>
-          </p>
+        <div className="mt-12 pt-8 border-t border-gray-700 text-gray-400 text-sm">
+          <div className="flex flex-col items-center md:flex-row md:justify-between">
+            <p className="text-center md:text-left">
+              © 2025 Trustmaker Infrareal Pvt. Ltd. All rights reserved.
+            </p>
+
+            <p className="mt-4 md:mt-0 text-center md:text-right">
+              Designed by{' '}
+              <a
+                href="https://webseeder.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-400 hover:text-teal-300 font-medium transition"
+              >
+                Webseeder Technologies
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

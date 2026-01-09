@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Main Headline */}
-          <h1 className="text-5xl font-bold leading-tight text-white relative inline-block pb-6">
+          <h1 className="text-5xl font-bold leading-tight text-white relative inline-block py-6">
               Easy, Fast &
               <span className="text-teal-300"> Reliable</span> Real Estate<br className="hidden md:block" />
               Services in Indore

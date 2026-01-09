@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 const MENU_ITEMS = [
   { label: "Home", href: "/" },
@@ -18,6 +19,9 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // Ref for mobile menu panel
+  const mobileMenuRef = useRef(null);
 
   // Login status
   useEffect(() => {
@@ -47,6 +51,23 @@ export default function Header() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // Outside click for mobile menu - Proper function
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
 
   const handleLogout = () => {
     localStorage.removeItem("associateLoggedIn");
@@ -116,19 +137,19 @@ export default function Header() {
                     {isLoggedIn ? (
                       <>
                         <Link href="/dashboard" className="flex items-center gap-4 px-6 py-4 text-white hover:bg-white/10 transition">
-                          <span className="text-xl">👤</span> My Profile
+                          My Profile
                         </Link>
                         <button onClick={handleLogout} className="flex items-center gap-4 w-full text-left px-6 py-4 text-red-400 hover:bg-red-900/30 transition">
-                          <span className="text-xl">🚪</span> Logout
+                         Logout
                         </button>
                       </>
                     ) : (
                       <>
                         <Link href="/auth/login" className="flex items-center gap-4 px-6 py-4 text-white hover:bg-teal-900/30 hover:text-teal-300 transition">
-                          <span className="text-xl">🔑</span> Login
+                          Login
                         </Link>
                         <Link href="/auth/signup" className="flex items-center gap-4 px-6 py-4 text-white hover:bg-[#9C2F5A]/30 transition">
-                          <span className="text-xl">📝</span> Join as Associate
+                          Join as Associate
                         </Link>
                       </>
                     )}
@@ -148,46 +169,100 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
+      
+      {/* Mobile Slide-Down Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-black/95 backdrop-blur-md border-t border-white/10">
-          <div className="py-8 space-y-6 text-center">
-            {MENU_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-2xl font-medium text-white hover:text-teal-300 transition"
-              >
-                {item.label}
-              </Link>
-            ))}
+        <>
+          {/* Overlay - Visual blur */}
+          <div 
+            className="fixed inset-0 top-18 z-30 lg:hidden bg-black/30"
+          />
 
-            <div className="border-t border-white/20 pt-6 mt-6 px-8">
-              {isLoggedIn ? (
-                <>
-                  <Link href="/dashboard" className="block py-3 text-xl text-white hover:text-teal-300">
-                    👤 My Profile
-                  </Link>
-                  <button onClick={handleLogout} className="block py-3 text-xl text-red-400 hover:text-red-300 w-full">
-                    🚪 Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link href="/auth/login" className="block py-3 text-xl text-white hover:text-teal-300">
-                    🔑 Associate Login
-                  </Link>
-                  <Link href="/auth/signup" className="block py-3 text-xl text-white hover:text-[#9C2F5A]">
-                    📝 Join as Associate
-                  </Link>
-                </>
-              )}
+          {/* Menu Panel - Ref attached for outside click */}
+          <div 
+            ref={mobileMenuRef}
+            className="fixed top-18 left-0 right-0 z-40 lg:hidden bg-white shadow-2xl animate-slideDown origin-top"
+          >
+            {/* Main Navigation Links */}
+            <div className="px-2 py-6 border-b border-gray-200">
+              <nav className="space-y-3">
+                {MENU_ITEMS.map((item) => {
+                  const isActive = window.location.pathname === item.href;
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block text-xl font-medium transition-all duration-300 rounded-lg ${
+                        isActive
+                          ? "bg-[#9C2F5A] text-white py-3 px-6 shadow-sm"
+                          : "text-gray-800 hover:text-[#9C2F5A] hover:bg-gray-50 py-3 px-6"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+
+            {/* Bottom Section: Auth + Simple Contact */}
+            <div className="px-8 py-6">
+              {/* Auth Links */}
+              <div className="space-y-5 pb-6 border-b border-gray-200">
+                {isLoggedIn ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setIsOpen(false)}
+                      className="block text-lg font-medium text-gray-800 hover:text-[#9C2F5A] transition"
+                    >
+                      My Profile
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block text-lg font-medium text-red-600 hover:text-red-700 transition w-full text-left"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/auth/login"
+                      onClick={() => setIsOpen(false)}
+                      className="block text-lg font-medium text-gray-800 hover:text-[#9C2F5A] transition"
+                    >
+                      Login
+
+                    </Link>
+                    <Link
+                      href="/auth/signup"
+                      onClick={() => setIsOpen(false)}
+                      className="block text-lg font-semibold text-[#9C2F5A] hover:opacity-80 transition"
+                    >
+                      Join as Associate →
+                    </Link>
+                  </>
+                )}
+              </div>
+
+              {/* Simple Contact Row - Phone & Email Only */}
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 text-gray-700 text-md">
+                <div className="flex items-center gap-3">
+                  <PhoneIcon className="w-5 h-5 text-[#9C2F5A]" />
+                  <span>+91-9826042358</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <EnvelopeIcon className="w-5 h-5 text-[#9C2F5A]" />
+                  <span>customercare@trustmaker.in</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
+
     </nav>
   );
 }

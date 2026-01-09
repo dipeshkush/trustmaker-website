@@ -36,7 +36,7 @@ export default function ContactUsPage() {
       <section className="py-12 bg-gradient-to-br from-gray-50 via-white to-pink-50 overflow-hidden">
         <div className="w-full mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
               Building Dreams, <span className="text-[#9C2F5A]">Delivering Trust</span>
               <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
             </h2>
@@ -52,12 +52,12 @@ export default function ContactUsPage() {
                 <UsersIcon className="w-10 h-10 text-[#D97A9F]" />
               </div>
               <div
-                className="text-4xl font-extrabold text-[#D97A9F] mb-3"
+                className="text-3xl font-extrabold text-[#D97A9F] mb-3"
                 data-count="500"
               >
                 500+
               </div>
-              <p className="text-2xl font-semibold text-[#9C2F5A]">Happy Customers</p>
+              <p className="text-2xl font-semibold text-gray-900">Happy Customers</p>
               <p className="text-gray-500 mt-2">Dream homes delivered with joy</p>
             </div>
 
@@ -67,12 +67,12 @@ export default function ContactUsPage() {
                 <BuildingOffice2Icon className="w-10 h-10 text-[#D97A9F]" />
               </div>
               <div
-                className="text-4xl font-extrabold text-[#D97A9F] mb-3"
+                className="text-3xl font-extrabold text-[#D97A9F] mb-3"
                 data-count="50"
               >
                 50+
               </div>
-              <p className="text-2xl font-semibold text-[#9C2F5A]">Projects Completed</p>
+              <p className="text-2xl font-semibold text-gray-900">Projects Completed</p>
               <p className="text-gray-500 mt-2">Premium residential & commercial spaces</p>
             </div>
 
@@ -82,12 +82,12 @@ export default function ContactUsPage() {
                 <CalendarDaysIcon className="w-10 h-10 text-[#D97A9F]" />
               </div>
               <div
-                className="text-4xl font-extrabold text-[#D97A9F] mb-3"
+                className="text-3xl font-extrabold text-[#D97A9F] mb-3"
                 data-count="10"
               >
                 10+
               </div>
-              <p className="text-2xl font-semibold text-[#9C2F5A]">Years of Excellence</p>
+              <p className="text-2xl font-semibold text-gray-900">Years of Excellence</p>
               <p className="text-gray-500 mt-2">Building trust since 2014</p>
             </div>
 
@@ -96,8 +96,8 @@ export default function ContactUsPage() {
               <div className="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-full bg-[#D97A9F]/10 group-hover:bg-[#D97A9F]/20 transition-colors">
                 <ShieldCheckIcon className="w-10 h-10 text-[#D97A9F]" />
               </div>
-              <div className="text-4xl font-extrabold text-[#D97A9F] mb-3">100%</div>
-              <p className="text-2xl font-semibold text-[#9C2F5A]">RERA Registered</p>
+              <div className="text-3xl font-extrabold text-[#D97A9F] mb-3">100%</div>
+              <p className="text-2xl font-semibold text-gray-900">RERA Registered</p>
               <p className="text-gray-500 mt-2">Fully transparent & legal projects</p>
             </div>
           </div>
