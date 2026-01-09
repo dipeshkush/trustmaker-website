@@ -21,27 +21,30 @@ export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   // Ref for mobile menu panel
-  const mobileMenuRef = useRef(null);
+const mobileMenuRef = useRef(null);        
+  const hamburgerRef = useRef(null);  
+ 
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev);
+  };
 
-  // Login status
   useEffect(() => {
     const loggedIn = localStorage.getItem("associateLoggedIn") === "true";
     setIsLoggedIn(loggedIn);
   }, []);
 
-  // Hide on scroll down
+  // Hide header on scroll down
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setVisible(currentScrollY < lastScrollY || currentScrollY < 10);
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close dropdown on outside click
+  // Close desktop dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest(".profile-dropdown")) {
@@ -52,10 +55,15 @@ export default function Header() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  // Outside click for mobile menu - Proper function
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (isOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+      if (
+        isOpen &&
+        mobileMenuRef.current &&
+        hamburgerRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
@@ -160,8 +168,9 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-3xl text-white focus:outline-none"
+              ref={hamburgerRef}
+              onClick={toggleMenu}
+              className="lg:hidden text-3xl text-white focus:outline-none z-50 relative"
               aria-label="Toggle menu"
             >
               {isOpen ? "✕" : "☰"}
