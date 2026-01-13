@@ -16,7 +16,7 @@ export default function AboutUs() {
 
         <div className="absolute inset-0 bg-black/80" />
 
-        <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
+        <div className="relative z-10 h-full flex items-center justify-center px-6 text-center mt-5">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center">
               About <span className="text-[#D97A9F]">Trustmaker </span>Infrareal

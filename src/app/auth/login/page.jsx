@@ -45,7 +45,7 @@ export default function Login() {
       {/* Login Card */}
       <div className="relative z-10 w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-10">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Associate Login
+          Login
         </h1>
 
         <form onSubmit={handleLogin} className="space-y-6">

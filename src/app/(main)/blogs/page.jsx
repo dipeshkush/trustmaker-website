@@ -22,7 +22,7 @@ export default function Blogs() {
         <div className="absolute inset-0 bg-black/70" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 text-center">
+        <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 text-center mt-5">
           <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center mx-auto">
             <span className="text-[#D97A9F]">Trustmaker</span> Blogs
           </h1>

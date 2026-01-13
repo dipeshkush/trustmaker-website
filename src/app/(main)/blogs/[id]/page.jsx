@@ -27,12 +27,12 @@ export default function BlogDetailPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] overflow-hidden">
+      <section className="relative min-h-screen md:min-h-[60vh] overflow-hidden">
         <Image src={post.image} alt={post.title} fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         <div className="absolute bottom-0 p-8 md:p-16 text-white max-w-5xl mx-auto w-full left-0 right-0">
           <span className="bg-[#D97A9F] px-4 py-2 rounded-full text-sm mb-6 inline-block">Real Estate Trends</span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">{post.title}</h1>
+          <h1 className="text-5xl font-bold mb-8 leading-tight">{post.title}</h1>
           <div className="flex flex-wrap gap-6 text-lg">
             <div className="flex items-center gap-2"><Calendar className="w-5 h-5" /> {post.date}</div>
             <div className="flex items-center gap-2"><Clock className="w-5 h-5" /> {post.readTime}</div>
@@ -208,9 +208,9 @@ export default function BlogDetailPage() {
             <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto text-center mb-10">
-  Explore more insights, market trends, and expert perspectives on real estate, investment,
-  and urban development to help you make informed property decisions.
-</p>
+            Explore more insights, market trends, and expert perspectives on real estate, investment,
+            and urban development to help you make informed property decisions.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-10 mt-12">
             {blogPosts
