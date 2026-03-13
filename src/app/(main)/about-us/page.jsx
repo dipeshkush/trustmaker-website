@@ -8,7 +8,7 @@ export default function AboutUs() {
       <div className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
           src="/about.webp"
-          alt="About Trustmaker Infrareal"
+          alt="About Trustsathi"
           fill
           className="object-cover object-center "
           priority
@@ -19,10 +19,10 @@ export default function AboutUs() {
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center mt-5">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center">
-              About <span className="text-[#D97A9F]">Trustmaker </span>Infrareal
+              About <span className="text-[#D97A9F]">Trustsathi</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              At Trustmaker Infrareal, we are more than just a real estate service — we are your trusted partner in one of life's biggest decisions. 
+              At Trustsathi, we are more than just a real estate service — we are your trusted partner in one of life's biggest decisions. 
               Founded with a simple yet powerful vision: to bring honesty, transparency, and genuine care back to property buying in Indore.
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function AboutUs() {
 
               <div className="space-y-5 text-lg text-gray-700 leading-relaxed max-w-xl">
                 <p>
-                  At Trustmaker Infrareal, property is more than land or buildings — it is the
+                  At Trustsathi, property is more than land or buildings — it is the
                   foundation of dreams, long-term security, and personal growth.
                 </p>
 
@@ -84,7 +84,7 @@ export default function AboutUs() {
             <div className="rounded-3xl overflow-hidden shadow-2xl order-2 lg:order-1">
               <Image
                 src="/about-2.webp"
-                alt="Commercial Properties by Trustmaker Infrareal"
+                alt="Commercial Properties by Trustsathi"
                 width={550}
                 height={400}
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
@@ -118,7 +118,7 @@ export default function AboutUs() {
         <div className="w-full mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
           <span className="relative inline-block pb-5">
-            Why Choose <span className="text-[#9C2F5A]">Trustmaker</span> Infrareal?
+            Why Choose <span className="text-[#9C2F5A]">Trustsathi</span> ?
             <span className="absolute left-1/2 bottom-0 w-36 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </span>
         </h2>

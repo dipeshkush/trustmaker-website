@@ -36,7 +36,7 @@ export default function BlogDetailPage() {
           <div className="flex flex-wrap gap-6 text-lg">
             <div className="flex items-center gap-2"><Calendar className="w-5 h-5" /> {post.date}</div>
             <div className="flex items-center gap-2"><Clock className="w-5 h-5" /> {post.readTime}</div>
-            <div className="flex items-center gap-2"><User className="w-5 h-5" /> Trustmaker Research Team</div>
+            <div className="flex items-center gap-2"><User className="w-5 h-5" />Trustsathi Research Team</div>
           </div>
         </div>
       </section>

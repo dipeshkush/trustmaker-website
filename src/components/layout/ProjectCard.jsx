@@ -89,7 +89,7 @@ export default function ProjectCard({ project }) {
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <Link
               href={`/projects/${slug}`}
-              className="px-6 py-2 rounded-full font-bold text-black text-lg shadow-2xl hover:bg-white/10 transition-all duration-300"
+              className="px-6 py-2 rounded-full text-white text-lg shadow-2xl bg-white/10 transition-all duration-300"
             >
               View Details →
             </Link>

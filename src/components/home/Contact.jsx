@@ -45,10 +45,10 @@ export default function ContactSection({ showForm = true }) {
               title="Email"
               content={
                 <a
-                  href="mailto:customercare@trustmaker.in"
+                  href="mailto:customercare@trustsathi.in"
                   className="hover:text-[#9C2F5A] transition"
                 >
-                  customercare@trustmaker.in
+                  customercare@trustsathi.in
                 </a>
               }
             />

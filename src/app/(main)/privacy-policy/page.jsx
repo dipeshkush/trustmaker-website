@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
         {/* Background Image */}
         <Image
           src="/bg.webp"
-          alt="Trustmaker Background"
+          alt="Trustsathi Background"
           fill
           className="object-cover object-center"
           priority
@@ -19,12 +19,12 @@ export default function PrivacyPolicy() {
         <div className="absolute inset-0 bg-black/80"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-5">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-10">
           <h1 className="text-5xl font-bold leading-tight py-4 mb-4 text-white drop-shadow-lg">
             Privacy Policy
           </h1>
           <p className="text-xl max-w-4xl mx-auto text-gray-100 leading-relaxed drop-shadow-md">
-            Welcome to Trustmaker Infrareal Pvt. Ltd. – your trusted partner in real estate solutions in Indore. 
+            Welcome to Trustsathi Pvt. Ltd. – your trusted partner in real estate solutions in Indore. 
             <br className="hidden md:block" />
             This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our website or use our services.
           </p>
@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
         <div className="w-full mx-auto px-6">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 prose prose-lg text-gray-700 max-w-none">
             <p className="text-lg leading-relaxed mb-10">
-              Welcome to Trustmaker Infrareal Pvt. Ltd. This Privacy Policy outlines how we handle your personal information when you use our website, mobile platform, or any of our services.
+              Welcome to Trustsathi Pvt. Ltd. This Privacy Policy outlines how we handle your personal information when you use our website, mobile platform, or any of our services.
             </p>
             <p className="text-lg leading-relaxed mb-10">
               We are committed to protecting your privacy and ensuring that your personal data is handled responsibly, securely, and in compliance with applicable laws.
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
                 When required by law, court order, or government request.
               </li>
               <li>
-                To protect the rights, property, or safety of Trustmaker, our users, or the public.
+                To protect the rights, property, or safety of Trustsathi, our users, or the public.
               </li>
             </ol>
 
@@ -133,10 +133,10 @@ export default function PrivacyPolicy() {
                 <p>
                   Email:{' '}
                   <a
-                    href="mailto:customercare@trustmaker.in"
+                    href="mailto:customercare@trustsathi.in"
                     className="text-teal-600 font-semibold hover:underline"
                   >
-                    customercare@trustmaker.in
+                    customercare@trustsathi.in
                   </a>
                 </p>
                 <p>

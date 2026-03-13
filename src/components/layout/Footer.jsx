@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <Image
-                src="/trustmaker.png"
+                src="/trustmaker1.png"
                 alt="Trustmaker Logo"
                 width={100}
                 height={20}
@@ -53,8 +53,8 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-teal-400 flex-shrink-0" />
-                <a href="mailto:customercare@trustmaker.in" className="hover:text-teal-400 transition">
-                  customercare@trustmaker.in
+                <a href="mailto:customercare@trustsathi.in" className="hover:text-teal-400 transition">
+                  customercare@trustsathi.in
                 </a>
               </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-700 text-gray-400 text-sm">
           <div className="flex flex-col items-center md:flex-row md:justify-between">
             <p className="text-center md:text-left">
-              © 2025 Trustmaker Infrareal Pvt. Ltd. All rights reserved.
+              © 2025 Trustsathi. All rights reserved.
             </p>
 
             <p className="mt-4 md:mt-0 text-center md:text-right">

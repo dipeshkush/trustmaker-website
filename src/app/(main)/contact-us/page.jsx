@@ -11,7 +11,7 @@ export default function ContactUsPage() {
       <section className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
           src="/contact.webp"
-          alt="Contact Trustmaker Infrareal - Indore Real Estate"
+          alt="Contact Trustsathi - Indore Real Estate"
           fill
           className="object-cover object-top"
           priority
@@ -22,7 +22,7 @@ export default function ContactUsPage() {
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center mt-5">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center">
-              Talk to <span className="text-[#D97A9F]">Trustmaker</span> Experts
+              Talk to <span className="text-[#D97A9F]">Trustsathi</span> Experts
             </h1>
             <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
               We're here to help you find your dream home in Indore — be it a cozy first apartment, a spacious family villa, a smart investment plot, or a prime commercial space.

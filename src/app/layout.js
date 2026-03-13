@@ -14,8 +14,8 @@ const lato = Lato({
 
 export const metadata = {
   title: {
-    template: '%s | Trustmaker Infrareal',
-    default: 'Trustmaker Infrareal - Premium Real Estate Services in Indore',
+    template: '%s | Trustsathi',
+    default: 'Trustsathi - Premium Real Estate Services in Indore',
   },
   description: 'Your trusted partner for verified properties in Indore with zero brokerage for buyers.',
 };

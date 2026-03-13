@@ -114,7 +114,7 @@ export default function ProjectsPage() {
       <section className="relative h-screen md:h-[60vh] overflow-hidden">
         <Image
           src="/projects.webp"
-          alt="Premium Projects in Indore - Trustmaker Infrareal"
+          alt="Premium Projects in Indore - Trustsathi"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center mt-5">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-             <span className="text-[#D97A9F]"> Trustmaker</span> Exclusive Collection
+             <span className="text-[#D97A9F]"> Trustsathi</span> Exclusive Collection
             </h1>
             <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
              Handpicked residential apartments, luxury villas, prime commercial spaces, 

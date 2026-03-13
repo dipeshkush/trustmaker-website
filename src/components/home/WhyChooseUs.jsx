@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
         {/* Heading */}
          <div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block pb-5 text-center">
-             Why Choose <span className="text-[#9C2F5A]">Trustmaker?</span>
+             Why Choose <span className="text-[#9C2F5A]">Trustsathi?</span>
             <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
 
               <img
                 src="/whychoose.webp"
-                alt="Trustmaker Home Buying"
+                alt="Trustsathi Home Buying"
                 className="w-full h-[500px] rounded-md object-cover"
               />
 
@@ -123,7 +123,7 @@ export default function WhyChooseUs() {
             className="flex flex-col justify-center items-start"
           >
             <p className="text-sm lg:text-lg text-gray-700 leading-7 tracking-wide">
-                At Trustmaker, we believe finding your dream home in Indore should be a joyful and stress-free
+                At Trustsathi, we believe finding your dream home in Indore should be a joyful and stress-free
                 experience. Every property we recommend is{" "}
                 <span className="font-semibold text-[#9C2F5A]">
                   100% authentic and personally hand-verified

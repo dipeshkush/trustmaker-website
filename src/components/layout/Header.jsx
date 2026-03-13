@@ -318,7 +318,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, EnvelopeIcon, UserIcon } from '@heroicons/react/24/outline';
 
 const MENU_ITEMS = [
   { label: "Home", href: "/" },
@@ -329,29 +329,26 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
-  const [isMenuVisible, setIsMenuVisible] = useState(false); // controls toggle
-  const [isAnimatingOut, setIsAnimatingOut] = useState(false); // keeps panel during close animation
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [activeTab, setActiveTab] = useState('login');
 
   const mobileMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
+  const profileRef = useRef(null);
 
   const toggleMenu = () => {
     if (isMenuVisible) {
-      // Start closing animation
       setIsAnimatingOut(true);
     } else {
-      // Open immediately
       setIsMenuVisible(true);
       setIsAnimatingOut(false);
     }
   };
 
-  // Handle animation end (for closing)
   const handleAnimationEnd = () => {
     if (isAnimatingOut) {
       setIsMenuVisible(false);
@@ -364,7 +361,6 @@ export default function Header() {
     setIsLoggedIn(loggedIn);
   }, []);
 
-  // Scroll hide/show logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -375,19 +371,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".profile-dropdown")) setShowDropdown(false);
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
   // Close mobile menu on outside click
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if ((isMenuVisible || isAnimatingOut) && mobileMenuRef.current && hamburgerRef.current &&
+      if ((isMenuVisible || isAnimatingOut) &&
+          mobileMenuRef.current && hamburgerRef.current &&
           !mobileMenuRef.current.contains(event.target) &&
           !hamburgerRef.current.contains(event.target)) {
         setIsAnimatingOut(true);
@@ -397,12 +385,22 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [isMenuVisible, isAnimatingOut]);
 
+  // Close profile dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showDropdown && profileRef.current && !profileRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showDropdown]);
+
   const handleLogout = () => {
     localStorage.removeItem("associateLoggedIn");
     window.location.reload();
   };
 
-  // Determine if panel should be rendered
   const shouldRenderMenu = isMenuVisible || isAnimatingOut;
 
   return (
@@ -418,7 +416,7 @@ export default function Header() {
           <Link href="/" className="flex items-center flex-shrink-0">
             <div className="relative w-48 h-16">
               <Image
-                src="/trustmaker.png"
+                src="/trustmaker1.png"
                 alt="Trustmaker Logo"
                 fill
                 className="object-contain object-left"
@@ -444,79 +442,58 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Right: Profile + Mobile Button */}
+          {/* Right side: Login / My Account + Hamburger */}
           <div className="flex items-center gap-6">
-            {/* Desktop Profile */}
-            <div className="hidden lg:block relative profile-dropdown">
-              <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="flex items-center gap-3 px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-900 font-medium transition"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span>{isLoggedIn ? "My Account" : "Account"}</span>
-                <svg className={`w-4 h-4 transition-transform ${showDropdown ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
 
-              {showDropdown && !isLoggedIn && (
-                <div className="absolute right-0 mt-3 w-80 bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
-                  <div className="flex border-b border-gray-200">
-                    <button
-                      onClick={() => setActiveTab('login')}
-                      className={`flex-1 py-3 text-center font-medium transition-all ${
-                        activeTab === 'login'
-                          ? 'bg-[#9C2F5A] text-white'
-                          : 'text-gray-700 hover:text-gray-900'
-                      }`}
+            {/* Desktop: Login or My Account with Dropdown */}
+            <div className="hidden lg:block relative" ref={profileRef}>
+              {isLoggedIn ? (
+                <>
+                  <button
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    className="flex items-center gap-3 px-6 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-900 font-medium rounded-xl transition"
+                  >
+                    <UserIcon className="w-5 h-5" />
+                    <span>My Account</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${showDropdown ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      Login
-                    </button>
-                    <button
-                      onClick={() => setActiveTab('register')}
-                      className={`flex-1 py-3 text-center font-medium transition-all ${
-                        activeTab === 'register'
-                          ? 'bg-[#9C2F5A] text-white'
-                          : 'text-gray-700 hover:text-gray-900'
-                      }`}
-                    >
-                      Join as Associate
-                    </button>
-                  </div>
-
-                  <div className="p-6">
-                    {activeTab === 'login' ? (
-                      <Link
-                        href="/auth/login"
-                        className="block w-full py-3 px-6 bg-gray-100 hover:bg-gray-200 text-gray-900 text-center rounded-xl transition"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        Go to Login →
-                      </Link>
-                    ) : (
-                      <Link
-                        href="/auth/signup"
-                        className="block w-full py-3 px-6 bg-[#9C2F5A] hover:bg-[#7A2448] text-white text-center rounded-xl transition shadow-lg"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        Join Now →
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {showDropdown && isLoggedIn && (
-                <div className="absolute right-0 mt-3 w-64 bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
-                  <Link href="/dashboard" className="block px-6 py-4 text-gray-900 hover:bg-gray-100 transition">
-                    My Profile
-                  </Link>
-                  <button onClick={handleLogout} className="block w-full text-left px-6 py-4 text-red-600 hover:bg-red-50 transition">
-                    Logout
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                   </button>
-                </div>
+
+                  {showDropdown && (
+                    <div className="absolute right-0 mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden z-50">
+                      <Link
+                        href="/dashboard"
+                        className="block px-6 py-3.5 text-gray-900 hover:bg-gray-50 transition"
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        My Profile
+                      </Link>
+                      <button
+                        onClick={() => {
+                          handleLogout();
+                          setShowDropdown(false);
+                        }}
+                        className="block w-full text-left px-6 py-3.5 text-red-600 hover:bg-red-50 transition"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href="/auth/login"
+                  className="flex items-center gap-3 px-6 py-2 bg-white border border-gray-300 hover:bg-gray-200 text-gray-900 font-medium rounded-xl transition shadow-sm"
+                >
+                  <UserIcon className="w-5 h-5" />
+                  Login
+                </Link>
               )}
             </div>
 
@@ -533,24 +510,21 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu with Smooth Open & Close Animation */}
+      {/* Mobile Menu - same as before */}
       {shouldRenderMenu && (
         <>
-          {/* Overlay */}
           <div className={`fixed inset-0 top-16 z-30 lg:hidden bg-black/30 transition-opacity duration-300 ${
-            isAnimatingOut ? 'opacity-0' : 'opacity-100'
+            isAnimatingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`} />
 
-          {/* Menu Panel */}
           <div
             ref={mobileMenuRef}
             className={`fixed top-16 left-0 right-0 z-40 lg:hidden bg-white shadow-2xl origin-top transition-all duration-300 ease-in-out ${
-              isAnimatingOut ? 'animate-slideUp scale-y-0 opacity-0' : 'animate-slideDown scale-y-100 opacity-100'
+              isAnimatingOut ? 'scale-y-0 opacity-0' : 'scale-y-100 opacity-100'
             }`}
-            onAnimationEnd={handleAnimationEnd}
+            onTransitionEnd={handleAnimationEnd}
           >
-            {/* Main Nav */}
-            <div className="px-2 py-6 border-b border-gray-200">
+            <div className="px-4 py-6 border-b border-gray-200">
               <nav className="space-y-3">
                 {MENU_ITEMS.map((item) => {
                   const isActive = window.location.pathname === item.href;
@@ -559,10 +533,10 @@ export default function Header() {
                       key={item.label}
                       href={item.href}
                       onClick={() => setIsAnimatingOut(true)}
-                      className={`block text-xl font-medium transition-all duration-300 rounded-lg ${
+                      className={`block text-xl font-medium transition-all rounded-lg px-5 py-3 ${
                         isActive
-                          ? "bg-[#9C2F5A] text-white py-3 px-6 shadow-sm"
-                          : "text-gray-900 hover:text-[#9C2F5A] hover:bg-gray-100 py-3 px-6"
+                          ? "bg-[#9C2F5A] text-white shadow-sm"
+                          : "text-gray-900 hover:bg-gray-100 hover:text-[#9C2F5A]"
                       }`}
                     >
                       {item.label}
@@ -572,78 +546,50 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* Auth Section */}
-            <div className="px-8 py-4">
+            <div className="px-6 py-8">
               {!isLoggedIn && (
-                <>
-                  <div className="flex border-b border-gray-200 mb-6">
-                    <button
-                      onClick={() => setActiveTab('login')}
-                      className={`flex-1 py-3 text-center font-medium transition ${
-                        activeTab === 'login' ? 'border-b-4 border-[#9C2F5A] text-[#9C2F5A]' : 'text-gray-700'
-                      }`}
-                    >
-                      Login
-                    </button>
-                    <button
-                      onClick={() => setActiveTab('register')}
-                      className={`flex-1 py-3 text-center font-medium transition ${
-                        activeTab === 'register' ? 'border-b-4 border-[#9C2F5A] text-[#9C2F5A]' : 'text-gray-700'
-                      }`}
-                    >
-                      Join as Associate
-                    </button>
-                  </div>
-
-                  <div className="mb-8">
-                    {activeTab === 'login' ? (
-                      <Link
-                        href="/auth/login"
-                        onClick={() => setIsAnimatingOut(true)}
-                        className="block w-full py-3 px-6 bg-[#9C2F5A] text-white text-center rounded-xl font-bold hover:bg-[#7A2448] transition"
-                      >
-                        Login Now →
-                      </Link>
-                    ) : (
-                      <Link
-                        href="/auth/signup"
-                        onClick={() => setIsAnimatingOut(true)}
-                        className="block w-full py-3 px-6 bg-[#9C2F5A] text-white text-center rounded-xl font-bold hover:bg-[#7A2448] transition"
-                      >
-                        Join as Associate →
-                      </Link>
-                    )}
-                  </div>
-                </>
+                <div className="mb-10">
+                  <Link
+                    href="/auth/login"
+                    onClick={() => setIsAnimatingOut(true)}
+                    className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-[#9C2F5A] hover:bg-[#7A2448] text-white text-center rounded-xl font-bold text-lg transition shadow-md"
+                  >
+                    <UserIcon className="w-6 h-6" />
+                    Login
+                  </Link>
+                </div>
               )}
 
               {isLoggedIn && (
-                <div className="space-y-5 pb-6 border-b border-gray-200">
+                <div className="space-y-6 pb-8 border-b border-gray-200">
                   <Link
                     href="/dashboard"
                     onClick={() => setIsAnimatingOut(true)}
-                    className="block text-lg font-medium text-gray-900 hover:text-[#9C2F5A] transition"
+                    className="flex items-center gap-3 text-xl font-medium text-gray-900 hover:text-[#9C2F5A] transition"
                   >
+                    <UserIcon className="w-6 h-6" />
                     My Profile
                   </Link>
                   <button
-                    onClick={handleLogout}
-                    className="block text-lg font-medium text-red-600 hover:text-red-700 transition w-full text-left"
+                    onClick={() => { handleLogout(); setIsAnimatingOut(true); }}
+                    className="flex items-center gap-3 w-full text-left text-xl font-medium text-red-600 hover:text-red-700 transition"
                   >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7" />
+                    </svg>
                     Logout
                   </button>
                 </div>
               )}
 
-              {/* Contact */}
-              <div className="mt-6 flex flex-col sm:flex-row gap-4 text-gray-700 text-md">
+              <div className="mt-8 flex flex-col gap-4 text-gray-700">
                 <div className="flex items-center gap-3">
                   <PhoneIcon className="w-5 h-5 text-[#9C2F5A]" />
                   <span>+91-9826042358</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <EnvelopeIcon className="w-5 h-5 text-[#9C2F5A]" />
-                  <span>customercare@trustmaker.in</span>
+                  <span>customercare@trustsathi.in</span>
                 </div>
               </div>
             </div>

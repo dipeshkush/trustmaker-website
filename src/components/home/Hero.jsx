@@ -45,7 +45,7 @@ export default function Hero() {
                 group relative inline-flex items-center justify-center
                 overflow-hidden
                 bg-white text-[#9C2F5A] font-bold text-lg md:text-xl
-                px-6 py-3 rounded-xl
+                px-6 py-2.5 rounded-xl
                 shadow-xl shadow-[#9C2F5A]/10
                 border border-[#9C2F5A]/20
                 transition-all duration-300 ease-out
@@ -83,7 +83,7 @@ export default function Hero() {
                 group relative inline-flex items-center justify-center gap-4
                 overflow-hidden
                 bg-black/70 backdrop-blur-md text-white font-bold text-lg md:text-xl
-                px-6 py-2 rounded-xl
+                px-8 py-2.5 rounded-xl
                 border border-white/20
                 shadow-2xl shadow-black/30
                 transition-all duration-300 ease-out
@@ -109,9 +109,15 @@ export default function Hero() {
                   opacity-0 group-hover:opacity-100
                 `}
               />
-              <svg className="w-9 h-9 relative z-10" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.009 2.778c-.271-.36-.822-.469-1.229-.248l11.155 11.155 3.416-3.416-13.342-7.491zM2.78 3.009l9.613 5.395 1.829-1.829-11.442-3.566zM1.551 3.627l13.342 7.491-3.416 3.416-9.926-10.907zM2.778 3.009l-.998.998 9.926 10.907 3.416-3.416-12.344-8.489zM22.451 10.5l-19.672 11.378c-.271.156-.489.424-.489.756 0 .551.447 1 1 1 .271 0 .519-.107.707-.283l19.672-11.378c.391-.226.629-.645.629-1.11s-.238-.884-.629-1.11l-19.672-11.378c-.188-.109-.436-.175-.707-.175-.551 0-1 .449-1 1 0 .332.218.6.489.756l19.672 11.378z"/>
-              </svg>
+              <Image
+                src="/playstore.png"
+                alt="Download on Play Store"
+                width={28}
+                height={28}
+                className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+              />
+
+
               <span className="relative z-10">Download App</span>
             </Link>
           </div>

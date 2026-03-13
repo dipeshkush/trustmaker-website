@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 const FAQS = [
   {
-    question: 'Why should I invest with Trustmaker?',
+    question: 'Why should I invest with Trustsathi?',
     answer:
-      'Trustmaker offers verified, RERA-approved residential and commercial projects with zero brokerage, transparent pricing, and complete support till possession.',
+      'Trustsathi offers verified, RERA-approved residential and commercial projects with zero brokerage, transparent pricing, and complete support till possession.',
   },
   {
     question: 'Are all properties legally verified?',

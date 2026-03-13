@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
         {/* Background Image */}
         <Image
           src="/bg.webp"
-          alt="Trustmaker Background"
+          alt="Trustsathi Background"
           fill
           className="object-cover object-center"
           priority
@@ -20,12 +20,12 @@ export default function TermsAndConditions() {
         <div className="absolute inset-0 bg-black/80"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-5">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-10">
           <h1 className="text-5xl font-bold leading-tight py-4 mb-4 text-white drop-shadow-lg">
             Terms and Conditions
           </h1>
           <p className="text-xl max-w-4xl mx-auto text-gray-100 leading-relaxed drop-shadow-md">
-            Welcome to Trustmaker Infrareal Pvt. Ltd. – your trusted partner in real estate solutions in Indore. 
+            Welcome to Trustsathi Pvt. Ltd. – your trusted partner in real estate solutions in Indore. 
             <br className="hidden md:block" />
             These Terms and Conditions govern your access to and use of our platform, including viewing properties, posting listings, managing accounts, and all related services.
           </p>
@@ -37,7 +37,7 @@ export default function TermsAndConditions() {
         <div className="w-full mx-auto px-6">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 prose prose-lg text-gray-700 max-w-none">
             <p className="text-lg leading-relaxed mb-10">
-              Welcome to Trustmaker Infrareal Pvt. Ltd. These Terms and Conditions outline the rules and regulations to be adhered to while using our services.
+              Welcome to Trustsathi Pvt. Ltd. These Terms and Conditions outline the rules and regulations to be adhered to while using our services.
             </p>
             <p className="text-lg leading-relaxed mb-10">
               Here, we provide an online platform for users to view, post, and manage property listings.
@@ -58,13 +58,13 @@ export default function TermsAndConditions() {
                 When listing their properties, users should be aware that any actions or activities they undertake during the listing process, as well as any actions taken afterward, are solely their responsibility.
               </li>
               <li>
-                Once the property is enlisted, Trustmaker will grant a licence to use, display, and distribute the content on the website.
+                Once the property is enlisted, Trustsathi will grant a licence to use, display, and distribute the content on the website.
               </li>
               <li>
-                The users registering on Trustmaker Infrareal Pvt. Ltd. are liable for maintaining the confidentiality of their account information.
+                The users registering on Trustsathi Pvt. Ltd. are liable for maintaining the confidentiality of their account information.
               </li>
               <li>
-                Trustmaker Infrareal Pvt. Ltd. reserves the right to remove any listings that violate these terms and conditions or are otherwise deemed inappropriate.
+                Trustsathi Pvt. Ltd. reserves the right to remove any listings that violate these terms and conditions or are otherwise deemed inappropriate.
               </li>
             </ol>
 
@@ -97,7 +97,7 @@ export default function TermsAndConditions() {
               </li>
             </ol>
             <p className="text-lg leading-relaxed mb-6">
-              Trustmaker Infrareal Pvt Ltd is a paid platform for the users to post, manage and maintain their properties.
+               Trustsathi Pvt Ltd is a paid platform for the users to post, manage and maintain their properties.
             </p>
             <p className="text-lg leading-relaxed">
               <strong>Payment Terms:</strong> All payments must be made in accordance with the payment terms specified on the website.
@@ -114,10 +114,10 @@ export default function TermsAndConditions() {
                 <p>
                   Email:{' '}
                   <a
-                    href="mailto:customercare@trustmaker.in"
+                    href="mailto:customercare@trustsathi.in"
                     className="text-teal-600 font-semibold hover:underline"
                   >
-                    customercare@trustmaker.in
+                    customercare@trustsathi.in
                   </a>
                 </p>
                 <p>

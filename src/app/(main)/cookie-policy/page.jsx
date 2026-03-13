@@ -8,7 +8,7 @@ export default function CookiePolicy() {
         {/* Background Image */}
         <Image
           src="/bg.webp"
-          alt="Trustmaker Background"
+          alt="Trustsathi Background"
           fill
           className="object-cover object-center"
           priority
@@ -19,12 +19,12 @@ export default function CookiePolicy() {
         <div className="absolute inset-0 bg-black/80"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-5">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-10">
           <h1 className="text-5xl font-bold leading-tight py-4 mb-4 text-white drop-shadow-lg">
             Cookie Policy
           </h1>
           <p className="text-xl max-w-4xl mx-auto text-gray-100 leading-relaxed drop-shadow-md">
-            Welcome to Trustmaker Infrareal Pvt. Ltd., this Cookie Policy outlines the rules and practices regarding the use of cookies and similar technologies on our website and platform.
+            Welcome to Trustsathi Pvt. Ltd., this Cookie Policy outlines the rules and practices regarding the use of cookies and similar technologies on our website and platform.
             <br className="hidden md:block" />
             We use cookies to enhance your browsing experience, ensure proper functioning of the website, analyze site performance, and provide a better user experience.
           </p>
@@ -36,7 +36,7 @@ export default function CookiePolicy() {
         <div className="w-full mx-auto px-6">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 prose prose-lg text-gray-700 max-w-none">
             <p className="text-lg leading-relaxed mb-10">
-              At Trustmaker Infrareal Pvt. Ltd., we are committed to protecting your privacy while providing a smooth and secure online experience.
+              At Trustsathi Infrareal Pvt. Ltd., we are committed to protecting your privacy while providing a smooth and secure online experience.
             </p>
             <p className="text-lg leading-relaxed mb-10">
               This Cookie Policy explains what cookies are, how we use them on our website, what types we use, and how you can manage them.
@@ -106,10 +106,10 @@ export default function CookiePolicy() {
                 <p>
                   Email:{' '}
                   <a
-                    href="mailto:customercare@trustmaker.in"
+                    href="mailto:customercare@trustsathi.in"
                     className="text-teal-600 font-semibold hover:underline"
                   >
-                    customercare@trustmaker.in
+                    customercare@trustsathi.in
                   </a>
                 </p>
                 <p>

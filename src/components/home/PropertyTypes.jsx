@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-
 const propertyTypes = [
   {
     title: 'Residential Apartments',
@@ -36,16 +35,15 @@ const propertyTypes = [
   },
 ];
 
-
 export default function PropertyTypes() {
   const slidesRef = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
   const visibilityMap = useRef(new Map());
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-  setMounted(true);
-}, []);
+    setMounted(true);
+  }, []);
 
 useEffect(() => {
   if (!mounted) return;
@@ -56,8 +54,8 @@ useEffect(() => {
         const index = Number(entry.target.dataset.index);
         visibilityMap.current.set(index, entry.intersectionRatio);
 
-        if (entry.intersectionRatio > 0) {
-          entry.target.classList.add("show");
+        if (entry.intersectionRatio > 0.1) {
+          entry.target.classList.add('show');
         }
       });
 
@@ -71,90 +69,102 @@ useEffect(() => {
         }
       });
 
-      setActiveIndex(active);
+      if (maxRatio > 0) setActiveIndex(active);
     },
     {
-      threshold: Array.from({ length: 21 }, (_, i) => i / 20),
-      rootMargin: "0px 0px -35% 0px",
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      rootMargin: "0px 0px -30% 0px",
     }
   );
 
   slidesRef.current.forEach((el) => el && observer.observe(el));
 
   return () => observer.disconnect();
-}, [mounted]);
-
-
-
+}, [mounted]);   // ← only mounted
 
   return (
-    <section className="bg-[#0f0f0f] py-18 text-white">
-      <div className="w-full mx-auto px-12">
-        <div className="grid lg:grid-cols-[420px_1fr] gap-20">
-          {/* LEFT PANEL */}
-          <aside className="lg:sticky lg:top-28 self-start space-y-10">
+    <section className="bg-[#0f0f0f] py-16 md:py-20 lg:py-24 text-white">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-12">
+        {/* Mobile-only heading */}
+        <div className="lg:hidden text-center mb-12 space-y-4">
+          <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
+            Elevating Your <span className="text-[#9C2F5A]">Property Journey</span>
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+            Trustsathi delivers carefully selected properties with zero brokerage,
+            complete transparency, and expert guidance.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">
+          {/* LEFT PANEL - Desktop only */}
+          <aside className="hidden lg:sticky lg:top-24 lg:block self-start space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold leading-tight relative inline-block pb-5">
-                Elevating Your <br className="hidden md:block" />
+              <h2 className="text-4xl inline-block font-bold pb-4">
+                Elevating Your <br />
                 <span className="text-[#9C2F5A]">Property Journey</span>
               </h2>
-
               <p className="text-lg text-gray-300 leading-relaxed">
-                Trustmaker Infrareal delivers carefully selected properties with
-                zero brokerage, complete transparency, and expert guidance.
+                Trustsathi delivers carefully selected properties with zero brokerage,
+                complete transparency, and expert guidance.
               </p>
             </div>
 
-            {/* Progress */}
-            <div className="flex flex-col gap-4">
+            {/* Progress indicators */}
+            <div className="flex flex-col gap-5 mt-8">
               {propertyTypes.map((_, i) => (
                 <span
                   key={i}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === activeIndex
-                      ? 'bg-[#9C2F5A] w-24'
-                      : 'bg-white/20 w-10'
+                  className={`h-1 rounded-full transition-all duration-700 ${
+                    i === activeIndex ? 'bg-[#9C2F5A] w-28' : 'bg-white/20 w-12'
                   }`}
                 />
               ))}
             </div>
           </aside>
 
-          {/* RIGHT PANEL */}
-          <div className="space-y-28">
+          {/* RIGHT PANEL - Cards (always visible, centered on mobile) */}
+          <div className="space-y-16 sm:space-y-20 lg:space-y-28">
             {propertyTypes.map((property, index) => (
               <article
                 key={index}
                 data-index={index}
                 ref={(el) => (slidesRef.current[index] = el)}
-                className={`property-slide ${mounted ? "" : "opacity-0"}`}
+                className={`property-slide transition-opacity duration-700 ${
+                  mounted ? 'opacity-100' : 'opacity-0'
+                }`}
               >
-                <div className="relative h-[75vh]  overflow-hidden">
-                  {/* Image */}
+                <div className="relative h-[65vh] sm:h-[70vh] lg:h-[80vh] max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src={property.image}
                     alt={property.title}
                     fill
                     priority={index === 0}
-                    className="object-cover transition-transform duration-[1800ms] will-change-transform hover:scale-105"
+                    className="object-cover transition-transform duration-2000 ease-out hover:scale-105"
                   />
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
 
-                  {/* Glass Card */}
-                  <div className="absolute bottom-10 left-10 max-w-md backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-7">
-                    <h3 className="text-2xl font-semibold mb-3">
+                  {/* Glass Card - centered on mobile, left on desktop */}
+                  <div
+                    className={`
+                      absolute bottom-6 sm:bottom-10 
+                      left-4 sm:left-8 lg:left-10 
+                      right-4 sm:right-8 lg:right-auto
+                      max-w-lg lg:max-w-md 
+                      backdrop-blur-xl bg-white/10 border border-white/20 
+                      rounded-2xl p-6 sm:p-7 lg:p-8
+                    `}
+                  >
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-white">
                       {property.title}
                     </h3>
-
-                    <p className="text-gray-200 text-base leading-relaxed mb-5">
+                    <p className="text-sm sm:text-base text-gray-200 leading-relaxed mb-4 sm:mb-6">
                       {property.subtitle}
                     </p>
-
                     <Link
                       href="/projects"
-                      className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white hover:text-[#9C2F5A] transition"
+                      className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold uppercase tracking-wide text-white hover:text-[#9C2F5A] transition-colors"
                     >
                       Explore Projects →
                     </Link>

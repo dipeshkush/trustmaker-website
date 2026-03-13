@@ -12,7 +12,7 @@ export default function Blogs() {
         {/* Background Image */}
         <Image
           src="/blogsimg.webp"   
-          alt="Trustmaker Blogs"
+          alt="Trustsathi Blogs"
           fill
           priority
           className="object-cover"
@@ -24,7 +24,7 @@ export default function Blogs() {
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 text-center mt-5">
           <h1 className="text-5xl font-bold text-white mb-6 leading-tight relative inline-block text-center mx-auto">
-            <span className="text-[#D97A9F]">Trustmaker</span> Blogs
+            <span className="text-[#D97A9F]">Trustsathi</span> Blogs
           </h1>
          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
           Expert insights, up-to-date market trends, and practical guidance from Indore’s trusted real estate professionals—empowering you to make smarter, well-informed property decisions with confidence.

@@ -6,7 +6,7 @@ export default function Testimonials() {
       name: "Rakesh Sharma",
       location: "Vijay Nagar, Indore",
       rating: 5,
-      text: "Trustmaker helped me find my dream 3BHK flat in just 15 days. Completely free service and full support till registration. Highly recommended!",
+      text: "Trustsathi helped me find my dream 3BHK flat in just 15 days. Completely free service and full support till registration. Highly recommended!",
     },
     {
       name: "Priya Patel",
@@ -30,13 +30,13 @@ export default function Testimonials() {
       name: "Rajesh Mehta",
       location: "Palasia, Indore",
       rating: 5,
-      text: "Trustmaker made buying commercial space so easy. No pressure, full transparency, and great negotiation.",
+      text: "Trustsathi made buying commercial space so easy. No pressure, full transparency, and great negotiation.",
     },
     {
       name: "Sunita Verma",
       location: "Scheme No. 54, Indore",
       rating: 5,
-      text: "As a first-time buyer, I was confused. Trustmaker team patiently explained everything and helped me buy my home.",
+      text: "As a first-time buyer, I was confused. Trustsathi team patiently explained everything and helped me buy my home.",
     },
 
     // Duplicate for smooth infinite scroll (must be exact copy)
@@ -44,7 +44,7 @@ export default function Testimonials() {
       name: "Rakesh Sharma",
       location: "Vijay Nagar, Indore",
       rating: 5,
-      text: "Trustmaker helped me find my dream 3BHK flat in just 15 days. Completely free service and full support till registration. Highly recommended!",
+      text: "TTrustsathi helped me find my dream 3BHK flat in just 15 days. Completely free service and full support till registration. Highly recommended!",
     },
     {
       name: "Priya Patel",
@@ -65,7 +65,7 @@ export default function Testimonials() {
             <span className="absolute left-1/2 bottom-0 w-28 h-1 bg-[#9C2F5A] -translate-x-1/2 rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-xl text-lg mb-8">
-            Hear from clients who found their perfect property with Trustmaker.
+            Hear from clients who found their perfect property with Trustsathi.
           </p>
         </div>
 
